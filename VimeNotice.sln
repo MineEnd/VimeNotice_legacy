@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VimeNotice", "VimeNotice\VimeNotice.csproj", "{9B0B20BA-A385-4E72-AC29-234D411BDDA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B0B20BA-A385-4E72-AC29-234D411BDDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0B20BA-A385-4E72-AC29-234D411BDDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0B20BA-A385-4E72-AC29-234D411BDDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0B20BA-A385-4E72-AC29-234D411BDDA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CB18693-4B88-416F-9F4D-F1A8E2F342DE}
+	EndGlobalSection
+EndGlobal
