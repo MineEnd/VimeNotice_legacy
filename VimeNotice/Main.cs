@@ -41,5 +41,25 @@ namespace VimeNotice
             APIKey D = new APIKey();
             D.ShowDialog();
         }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+        
+        private void TrayNotify()
+        {
+            notifyIcon1.Icon = SystemIcons.Exclamation;
+            notifyIcon1.BalloonTipTitle = "Balloon Tip Title";
+            notifyIcon1.BalloonTipText = "Balloon Tip Text.";
+            notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
+            this.Click += new EventHandler(StartNotify);
+        }
+
+        private void StartNotify(object sender, EventArgs e)
+        {
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(30);
+        }
     }
 }

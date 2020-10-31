@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.инструментыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьГильдиюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +42,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,14 +69,14 @@
             // добавитьГильдиюToolStripMenuItem
             // 
             this.добавитьГильдиюToolStripMenuItem.Name = "добавитьГильдиюToolStripMenuItem";
-            this.добавитьГильдиюToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьГильдиюToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.добавитьГильдиюToolStripMenuItem.Text = "Добавить гильдию";
             this.добавитьГильдиюToolStripMenuItem.Click += new System.EventHandler(this.добавитьИгрокаToolStripMenuItem_Click);
             // 
             // добавитьAPIKeyToolStripMenuItem
             // 
             this.добавитьAPIKeyToolStripMenuItem.Name = "добавитьAPIKeyToolStripMenuItem";
-            this.добавитьAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьAPIKeyToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.добавитьAPIKeyToolStripMenuItem.Text = "Изменить API Key";
             this.добавитьAPIKeyToolStripMenuItem.Click += new System.EventHandler(this.добавитьAPIKeyToolStripMenuItem_Click);
             // 
@@ -89,14 +92,14 @@
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -143,6 +146,14 @@
             this.textBox1.Size = new System.Drawing.Size(382, 202);
             this.textBox1.TabIndex = 6;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "VimeNotice";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +189,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.DeleteTempFiles = new System.Windows.Forms.CheckBox();
@@ -50,9 +51,12 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,11 +87,12 @@
             // DeleteTempFiles
             // 
             this.DeleteTempFiles.AutoSize = true;
+            this.DeleteTempFiles.Enabled = false;
             this.DeleteTempFiles.Location = new System.Drawing.Point(11, 107);
             this.DeleteTempFiles.Name = "DeleteTempFiles";
-            this.DeleteTempFiles.Size = new System.Drawing.Size(222, 17);
+            this.DeleteTempFiles.Size = new System.Drawing.Size(252, 17);
             this.DeleteTempFiles.TabIndex = 2;
-            this.DeleteTempFiles.Text = "Удалять ненужные файлы программы";
+            this.DeleteTempFiles.Text = "Удалять ненужные файлы программы (WIP)";
             this.toolTip1.SetToolTip(this.DeleteTempFiles, "Удаление логов запросов к серверу, удаляется каждые 7 дней.");
             this.DeleteTempFiles.UseVisualStyleBackColor = true;
             this.DeleteTempFiles.CheckedChanged += new System.EventHandler(this.checkBox13_CheckedChanged);
@@ -104,11 +109,12 @@
             // AutoStartInTray
             // 
             this.AutoStartInTray.AutoSize = true;
+            this.AutoStartInTray.Enabled = false;
             this.AutoStartInTray.Location = new System.Drawing.Point(11, 55);
             this.AutoStartInTray.Name = "AutoStartInTray";
-            this.AutoStartInTray.Size = new System.Drawing.Size(120, 17);
+            this.AutoStartInTray.Size = new System.Drawing.Size(150, 17);
             this.AutoStartInTray.TabIndex = 3;
-            this.AutoStartInTray.Text = "Автозапуск в трее";
+            this.AutoStartInTray.Text = "Автозапуск в трее (WIP)";
             this.AutoStartInTray.UseVisualStyleBackColor = true;
             this.AutoStartInTray.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
@@ -267,6 +273,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -278,6 +285,23 @@
             // toolTip1
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(338, 168);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Тестовое уведомление";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // Settings
             // 
@@ -292,6 +316,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -318,5 +343,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

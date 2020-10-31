@@ -154,14 +154,18 @@ namespace VimeNotice
                 AutoStartInTray.Enabled = false;
                 }
             if (AutoStart.Checked == true)
-                {
-                    Properties.Settings.Default.AutoStart = true;
+            {
+                Properties.Settings.Default.AutoStart = true;
                 Properties.Settings.Default.Save();
+                var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run\", true);
+                key.SetValue("VimeNotice", Application.ExecutablePath);
             };
                 if (AutoStart.Checked == false)
-                {
-                    Properties.Settings.Default.AutoStart = false;
+            {
+                Properties.Settings.Default.AutoStart = false;
                 Properties.Settings.Default.Save();
+                var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run\", true);
+                key.DeleteValue("VimeNotice");
             }
         }
        
@@ -345,6 +349,21 @@ namespace VimeNotice
                     Properties.Settings.Default.Save();
                 }
             }
+        }
+
+        void button1_Click(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(
+              10000,
+              "Новый ответ",
+              "Поступил новый ответ на ваш вопрос на Toster.ru",
+              ToolTipIcon.Info
+            );
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
