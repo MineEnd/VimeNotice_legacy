@@ -44,22 +44,59 @@ namespace VimeNotice
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
-        }
-        
-        private void TrayNotify()
-        {
-            notifyIcon1.Icon = SystemIcons.Exclamation;
-            notifyIcon1.BalloonTipTitle = "Balloon Tip Title";
-            notifyIcon1.BalloonTipText = "Balloon Tip Text.";
-            notifyIcon1.BalloonTipIcon = ToolTipIcon.Error;
-            this.Click += new EventHandler(StartNotify);
+            this.Show();
+            WindowState = FormWindowState.Normal;
+            notifyIcon1.Visible = false;
         }
 
-        private void StartNotify(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
-            notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(30);
+            notifyIcon1.BalloonTipTitle = "VimeNotice";
+            notifyIcon1.BalloonTipText = "Приложение продолжает работать";
+            notifyIcon1.Text = "VimeNotice";
+            if (Properties.Settings.Default.AutoStartInTray == true)
+            {
+                this.Hide();
+                notifyIcon1.Visible = true;
+            }
+        }
+
+        private void Main_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(1000);
+            }
+            else if (FormWindowState.Normal == this.WindowState)
+              {  notifyIcon1.Visible = false; }
+
+        }
+
+        private void notifyIcon1_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            WindowState = FormWindowState.Normal;
+            notifyIcon1.Visible = false;
+        }
+
+        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            WindowState = FormWindowState.Normal;
+            notifyIcon1.Visible = false;
+        }
+
+        private void настройкиToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Settings A = new Settings();
+            A.ShowDialog();
+        }
+
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
-}
+    }

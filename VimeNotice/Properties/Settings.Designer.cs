@@ -202,5 +202,17 @@ namespace VimeNotice.Properties {
                 this["APIKey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int GuildNumber {
+            get {
+                return ((int)(this["GuildNumber"]));
+            }
+            set {
+                this["GuildNumber"] = value;
+            }
+        }
     }
 }

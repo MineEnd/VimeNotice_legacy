@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using VimeNotice.Properties;
+using System.Security.Permissions;
+using System.Security.Principal;
+using System.Drawing;
 
 namespace VimeNotice
 {
@@ -100,7 +94,19 @@ namespace VimeNotice
                 {
                     AutoStartInTray.Enabled = false;
                 }
+            bool isElevated;
+            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+            {
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+                isElevated = principal.IsInRole(WindowsBuiltInRole.Administrator);
             }
+            if (isElevated == false)
+            {
+                AutoStart.Enabled = false;
+                label3.ForeColor = Color.Red;
+                label3.Text = "Запустите программу с правами администратора";
+            }
+        }
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
             if (EnableNotify.Checked == false)
@@ -349,16 +355,6 @@ namespace VimeNotice
                     Properties.Settings.Default.Save();
                 }
             }
-        }
-
-        void button1_Click(object sender, EventArgs e)
-        {
-            notifyIcon1.ShowBalloonTip(
-              10000,
-              "Новый ответ",
-              "Поступил новый ответ на ваш вопрос на Toster.ru",
-              ToolTipIcon.Info
-            );
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)

@@ -23,7 +23,7 @@ namespace VimeNotice
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            textBox1.Text
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace VimeNotice
             WebClient web = new WebClient();
             web.Proxy = new WebProxy();
             var reply = web.DownloadString("https://api.vimeworld.ru/online?token=" + Token.ToString());
-            if (textBox1.Text = "clear")
+            if (textBox1.Text == null)
             {
                 Properties.Settings.Default.APIKey = null;
             }
@@ -48,6 +48,11 @@ namespace VimeNotice
                 label4.ForeColor = Color.Green;
                 label4.Text = "Токен сохранён.";
             }
+        }
+
+        private void APIKey_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
